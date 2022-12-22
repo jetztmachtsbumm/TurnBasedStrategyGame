@@ -9,6 +9,11 @@ public class Unit : MonoBehaviour
 
     private Vector3 targetPosition;
 
+    private void Awake()
+    {
+        targetPosition = transform.position;
+    }
+
     private void Update()
     {
         float stoppingDistance = .1f;
@@ -31,14 +36,9 @@ public class Unit : MonoBehaviour
 
             unitAnimator.SetBool("IsWalking", false);
         }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            Move(MouseWorld.GetMouseWorldPosition());
-        }
     }
 
-    private void Move(Vector3 targetPosition)
+    public void Move(Vector3 targetPosition)
     {
         this.targetPosition = targetPosition;
     }
