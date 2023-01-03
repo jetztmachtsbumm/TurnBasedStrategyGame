@@ -31,4 +31,9 @@ public class GridObject
         return unitList;
     }
 
+    public bool IsGridPositionOccupied()
+    {
+        return unitList.Count > 0;
+    }
+
 }
