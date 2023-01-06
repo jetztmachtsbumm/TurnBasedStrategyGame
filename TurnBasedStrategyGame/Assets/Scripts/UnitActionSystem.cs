@@ -90,6 +90,11 @@ public class UnitActionSystem : MonoBehaviour
                         return false;
                     }
 
+                    if(clickedUnit == selectedUnit)
+                    {
+                        return false;
+                    }
+
                     SetSelectedUnit(clickedUnit);
                     return true;
                 }
