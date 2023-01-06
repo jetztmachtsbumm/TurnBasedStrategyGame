@@ -6,6 +6,8 @@ using UnityEngine;
 public class ShootAction : BaseAction
 {
 
+    public event EventHandler OnShoot;
+
     private enum State
     {
         Aiming,
@@ -43,6 +45,7 @@ public class ShootAction : BaseAction
 
         if (stateTimer <= 0)
         {
+            OnShoot?.Invoke(this, EventArgs.Empty);
             NextState();
         }
     }
